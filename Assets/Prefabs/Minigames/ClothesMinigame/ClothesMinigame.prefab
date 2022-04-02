@@ -255,6 +255,7 @@ Transform:
   - {fileID: 3202881584576287961}
   - {fileID: 1522729476}
   - {fileID: 1905580356}
+  - {fileID: 1693002857}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -304,7 +305,19 @@ MonoBehaviour:
         m_CallState: 2
   OnMinigameSuccess:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1693002858}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnMinigameFailure:
     m_PersistentCalls:
       m_Calls: []
@@ -337,7 +350,7 @@ MonoBehaviour:
     TimeBetweenSpawn: 0.15
   _clothesSpawner: {fileID: 9023497767521069991}
   _timerText: {fileID: 1905580357}
-  _endTime: 60
+  _endTime: 5
 --- !u!114 &114301313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,6 +921,73 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &4878482456734973349
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3202881583387360065}
+    m_Modifications:
+    - target: {fileID: 4878482455050359244, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878482455050359244, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878482455050359244, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878482455050359244, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878482455050359244, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878482455050359244, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878482455050359244, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878482455050359244, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878482455050359244, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878482455050359244, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878482455050359244, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878482455050359281, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+      propertyPath: m_Name
+      value: Win Particle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+--- !u!4 &1693002857 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4878482455050359244, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+  m_PrefabInstance: {fileID: 4878482456734973349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1693002858 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4878482455050359247, guid: 15cca7787bc05a140accebb84a6ef02e, type: 3}
+  m_PrefabInstance: {fileID: 4878482456734973349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8119468820924852690
 PrefabInstance:
   m_ObjectHideFlags: 0
