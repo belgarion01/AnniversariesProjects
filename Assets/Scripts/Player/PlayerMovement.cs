@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb2d;
     [SerializeField] private float _gravity = -9.81f;
     [SerializeField] private float _movementSpeed = -100f;
+    [SerializeField] private Animator _animator;
 
     public bool Enabled { get; set; } = true;
     
@@ -19,13 +20,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-#if UNITY_EDITOR
         _hAxis = Input.GetAxisRaw("Horizontal");
         _vAxis = Input.GetAxisRaw("Vertical");
-#else
-        _hAxis = rightPressed ? 1f : -1f;
-        _vAxis = leftPressed ? 1f : -1f;
-#endif
+
+        if (_hAxis == 0 && (leftPressed || rightPressed))
+        {
+            float v = leftPressed ? -1 : 0;
+            v += rightPressed ? 1 : 0;
+            _hAxis = v;
+        }
+        
+        _animator?.SetBool("IsWalking", _hAxis != 0);
     }
 
     void FixedUpdate()

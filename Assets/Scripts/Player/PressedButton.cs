@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
-public class PressedButton : MonoBehaviour
+public class PressedButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    public UnityEvent<bool> OnPressedChanged;
+    
+    public void OnPointerDown(PointerEventData eventData)
     {
-        
+        OnPressedChanged?.Invoke(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerUp(PointerEventData eventData)
     {
-        
+        OnPressedChanged?.Invoke(false);
     }
 }

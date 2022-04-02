@@ -62,9 +62,11 @@ public class ClothesMinigame : Minigame
 
     public override void StartMinigame(Player player)
     {
-        if (IsMinigameFinished) return;
+        if (IsMinigameFinished || IsMinigameActive) return;
         base.StartMinigame(player);
 
+        _minigameTimer = 0f;
+        
         EnableBarriers(true);
     }
 
