@@ -7,7 +7,20 @@
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [],
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "9WVDU18320006429",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 16635,
+            "exited": true
+        },
+        {
+            "deviceId": "9WVDU18320006429",
+            "name": "com.huawei.android.launcher",
+            "processId": 1830,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {

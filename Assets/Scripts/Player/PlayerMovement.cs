@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _gravity = -9.81f;
     [SerializeField] private float _movementSpeed = -100f;
     [SerializeField] private Animator _animator;
+    [SerializeField] private Transform _playerVisual;
 
     public bool Enabled { get; set; } = true;
     
@@ -17,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool leftPressed;
     private bool rightPressed;
+
+    private bool _isFacingRight = true;
 
     void Update()
     {
@@ -31,6 +34,13 @@ public class PlayerMovement : MonoBehaviour
         }
         
         _animator?.SetBool("IsWalking", _hAxis != 0);
+
+        if ((_isFacingRight && _hAxis < 0) || (!_isFacingRight && _hAxis > 0))
+        {
+            _playerVisual.localScale = new Vector3(_playerVisual.localScale.x, _playerVisual.localScale.y,
+                -_playerVisual.localScale.z);
+            _isFacingRight = !_isFacingRight;
+        }
     }
 
     void FixedUpdate()
