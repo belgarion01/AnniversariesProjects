@@ -20,11 +20,7 @@ public class ClothesMinigame : Minigame
     {
         base.Awake();
         
-        _difficultyQueue.Clear();
-        foreach (DifficultySettings settings in _difficultySettings)
-        {
-            _difficultyQueue.Enqueue(settings);
-        }
+        ResetDifficulty();
     }
 
     protected override void Start()
@@ -46,8 +42,6 @@ public class ClothesMinigame : Minigame
             {
                 _clothesSpawner.TimeBetweenSpawn = settings.TimeBetweenSpawn;
                 _difficultyQueue.Dequeue();
-                
-                Debug.Log(_clothesSpawner.TimeBetweenSpawn);
             }
         }
 
@@ -65,6 +59,7 @@ public class ClothesMinigame : Minigame
         if (IsMinigameFinished || IsMinigameActive) return;
         base.StartMinigame(player);
 
+        ResetDifficulty();
         _minigameTimer = 0f;
         
         EnableBarriers(true);
@@ -83,6 +78,15 @@ public class ClothesMinigame : Minigame
         foreach (var barrier in _barriers)
         {
             barrier.SetActive(enable);
+        }
+    }
+
+    void ResetDifficulty()
+    {
+        _difficultyQueue.Clear();
+        foreach (DifficultySettings settings in _difficultySettings)
+        {
+            _difficultyQueue.Enqueue(settings);
         }
     }
     

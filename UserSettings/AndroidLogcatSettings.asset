@@ -19,6 +19,18 @@
             "name": "com.huawei.android.launcher",
             "processId": 1830,
             "exited": false
+        },
+        {
+            "deviceId": "9WVDU18320006429",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 23179,
+            "exited": true
+        },
+        {
+            "deviceId": "9WVDU18320006429",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 24465,
+            "exited": true
         }
     ],
     "m_Tags": {
